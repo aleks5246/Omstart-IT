@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Omstart IT köper och säljer begagnade datorer, skärmar och IT-utrustning. Testat, rekonditionerat och redo för ett nytt kapitel.">
+    <title>Omstart IT — Bra teknik. Ett nytt kapitel.</title>
+      <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f2119'/%3E%3Cpath d='M23 12a8 8 0 1 0 0 9M23 6v7h-7' fill='none' stroke='%23b7f655' stroke-width='3'/%3E%3C/svg%3E">
+      <style>
+      :root {
+      --ink:#102119;
+      --green:#b7f655;
+      --white:#fff;
+      --muted:#5f6c64;
+      --line:#dce2dc;
+      --soft:#f4f7f2
+      }
+      * {
+      box-sizing:border-box
+      }
+      html {
+      scroll-behavior:smooth;
+      scroll-padding-top:90px
+      }
+      body {
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--ink);
+      font-size:16px;
+      line-height:1.6
+      }
+      a {
+      color:inherit
+      }
+      button,input,textarea {
+      font:inherit
+      }
+      button,a {
+      -webkit-tap-highlight-color:transparent
+      }
+      a:focus-visible,button:focus-visible,summary:focus-visible,textarea:focus-visible {
+      outline:3px solid #408713;
+      outline-offset:5px
+      }
+      .wrap {
+      max-width:1280px;
+      margin:auto;
+      padding:0 6%
+      }
+      header {
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:#fffffff2;
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line)
+      }
+      nav {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      min-height:86px;
+      gap:28px
+      }
+      .brand {
+      text-decoration:none;
+      font-weight:800;
+      font-size:24px;
+      letter-spacing:-1px;
+      white-space:nowrap
+      }
+      .mark {
+      display:inline-flex;
+      background:var(--green);
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      align-items:center;
+      justify-content:center;
+      margin-right:9px;
+      font-size:27px;
+      vertical-align:middle
+      }
+      .links {
+      display:flex;
+      gap:28px;
+      font-size:14px;
+      font-weight:600
+      }
+      .links a {
+      text-decoration:none
+      }
+      .links a:hover {
+      text-decoration:underline
+      }
+      .btn {
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      min-height:50px;
+      border:1px solid var(--ink);
+      padding:12px 23px;
+      border-radius:6px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+      cursor:pointer;
+      background:var(--ink);
+      color:white
+      }
+      .btn:hover {
+      background:#2b4435
+      }
+      .btn.green {
+      background:var(--green);
+      color:var(--ink);
+      border-color:var(--green)
+      }
+      .btn.green:hover {
+      background:#a4e33f
+      }
+      .btn.light {
+      color:var(--ink);
+      background:white
+      }
+      .hero {
+      background:var(--soft);
+      padding:82px 0 72px
+      }
+      .hero-grid {
+      display:grid;
+      grid-template-columns:1.25fr .85fr;
+      gap:65px;
+      align-items:center
+      }
+      .eyebrow {
+      text-transform:uppercase;
+      font-size:12px;
+      letter-spacing:2px;
+      font-weight:700;
+      display:block;
+      margin-bottom:24px
+      }
+      .eyebrow:before {
+      content:'';
+      display:inline-block;
+      width:26px;
+      height:2px;
+      background:currentColor;
+      vertical-align:middle;
+      margin-right:12px
+      }
+      h1 {
+      font-size:clamp(42px,5.6vw,76px);
+      line-height:1.05;
+      letter-spacing:-3.6px;
+      margin:0 0 26px;
+      font-weight:800
+      }
+      h1 span {
+      color:#408013
+      }
+      p {
+      margin:0 0 20px
+      }
+      .intro {
+      font-size:18px;
+      color:var(--muted);
+      max-width:490px;
+      line-height:1.7
+      }
+      .actions {
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin:30px 0
+      }
+      .hero-note {
+      font-size:13px;
+      color:var(--muted)
+      }
+      .feature {
+      background:var(--ink);
+      color:white;
+      border-radius:12px;
+      padding:35px;
+      position:relative;
+      overflow:hidden
+      }
+      .feature .eyebrow {
+      color:var(--green)
+      }
+      .feature h2 {
+      font-size:34px;
+      line-height:1.15;
+      letter-spacing:-1px;
+      max-width:270px;
+      margin:20px 0 28px
+      }
+      .feature-list {
+      border-top:1px solid #405046
+      }
+      .feature-row {
+      display:flex;
+      justify-content:space-between;
+      padding:18px 0;
+      border-bottom:1px solid #405046;
+      font-size:14px
+      }
+      .feature-row span:last-child {
+      color:var(--green)
+      }
+      .feature-footer {
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      margin-top:30px
+      }
+      .big {
+      font-size:72px;
+      font-weight:800;
+      line-height:1;
+      letter-spacing:-4px;
+      color:var(--green)
+      }
+      .small {
+      max-width:140px;
+      font-size:13px;
+      color:#c0cec5
+      }
+      .strip {
+      background:var(--green)
+      }
+      .strip .wrap {
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      padding-top:20px;
+      padding-bottom:20px;
+      font-size:14px;
+      font-weight:700
+      }
+      .strip span:before {
+      content:'✓';
+      margin-right:9px
+      }
+      section {
+      padding:88px 0
+      }
+      .section-top {
+      display:flex;
+      justify-content:space-between;
+      gap:40px;
+      align-items:end;
+      margin-bottom:35px
+      }
+      h2 {
+      font-size:clamp(30px,3.4vw,45px);
+      line-height:1.12;
+      letter-spacing:-1.6px;
+      margin:0 0 18px
+      }
+      .section-top p {
+      max-width:370px;
+      color:var(--muted);
+      margin-bottom:4px
+      }
+      .cards {
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px
+      }
+      .card {
+      border:1px solid var(--line);
+      padding:28px 23px;
+      border-radius:8px;
+      display:flex;
+      flex-direction:column;
+      min-height:255px;
+      transition:transform .2s
+      }
+      .card:hover {
+      transform:translateY(-4px)
+      }
+      .card .num {
+      font-size:12px;
+      color:var(--muted);
+      margin-bottom:35px
+      }
+      .card h3 {
+      font-size:21px;
+      letter-spacing:-.6px;
+      margin:0 0 12px
+      }
+      .card p {
+      font-size:14px;
+      color:var(--muted);
+      margin-bottom:0
+      }
+      .card:last-child {
+      background:var(--soft)
+      }
+      .footnote {
+      font-size:13px;
+      color:var(--muted);
+      margin-top:22px
+      }
+      .sell {
+      background:var(--ink);
+      color:white
+      }
+      .split {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:80px;
+      align-items:start
+      }
+      .sell .eyebrow {
+      color:var(--green)
+      }
+      .sell p {
+      color:#c0cec5;
+      max-width:450px
+      }
+      .sell h2 {
+      font-size:48px
+      }
+      .checklist {
+      margin:30px 0 0;
+      padding:0;
+      list-style:none
+      }
+      .checklist li {
+      padding:13px 0;
+      border-bottom:1px solid #3b4b40;
+      font-size:15px
+      }
+      .checklist li:before {
+      content:'✓';
+      color:var(--green);
+      margin-right:12px
+      }
+      .quote-box {
+      background:white;
+      color:var(--ink);
+      border-radius:10px;
+      padding:35px
+      }
+      .quote-box h3 {
+      margin:0 0 10px;
+      font-size:24px;
+      letter-spacing:-.6px
+      }
+      .quote-box p {
+      font-size:14px;
+      color:var(--muted)
+      }
+      label {
+      font-size:14px;
+      font-weight:700;
+      display:block;
+      margin:22px 0 8px
+      }
+      textarea {
+      width:100%;
+      min-height:150px;
+      border:1px solid var(--line);
+      border-radius:6px;
+      padding:14px;
+      resize:vertical;
+      line-height:1.6;
+      background:var(--soft)
+      }
+      .quote-box button {
+      width:100%;
+      margin-top:17px
+      }
+      .status {
+      font-size:14px;
+      min-height:24px;
+      margin-top:12px!important;
+      margin-bottom:0!important
+      }
+      .process {
+      background:var(--soft)
+      }
+      .steps {
+      margin-top:44px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:30px
+      }
+      .step {
+      border-top:2px solid var(--ink);
+      padding-top:22px
+      }
+      .step b {
+      font-size:14px;
+      color:#408013
+      }
+      .step h3 {
+      font-size:19px;
+      margin:24px 0 12px
+      }
+      .step p {
+      font-size:14px;
+      color:var(--muted)
+      }
+      .process-note {
+      margin-top:32px;
+      background:white;
+      border-left:3px solid #7fac42;
+      padding:20px 24px;
+      color:var(--muted);
+      font-size:14px
+      }
+      .support {
+      display:grid;
+      grid-template-columns:.6fr 1.4fr;
+      gap:70px;
+      align-items:center
+      }
+      .support-number {
+      background:var(--green);
+      padding:40px;
+      border-radius:10px;
+      text-align:center
+      }
+      .support-number strong {
+      font-size:120px;
+      line-height:1;
+      font-weight:800;
+      display:block;
+      letter-spacing:-8px
+      }
+      .support-number span {
+      display:block;
+      font-size:16px;
+      margin-top:12px
+      }
+      .support p {
+      color:var(--muted)
+      }
+      .tags {
+      display:flex;
+      flex-wrap:wrap;
+      gap:9px;
+      margin:20px 0
+      }
+      .tags span {
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:7px 14px;
+      font-size:13px
+      }
+      .faq {
+      border-top:1px solid var(--line);
+      padding-top:55px
+      }
+      .faq-grid {
+      display:grid;
+      grid-template-columns:.7fr 1.3fr;
+      gap:60px
+      }
+      details {
+      border-bottom:1px solid var(--line);
+      padding:20px 0
+      }
+      summary {
+      font-weight:700;
+      cursor:pointer;
+      list-style:none;
+      padding-right:30px;
+      position:relative
+      }
+      summary:after {
+      content:'+';
+      position:absolute;
+      right:4px;
+      font-size:24px;
+      top:-6px
+      }
+      details[open] summary:after {
+      content:'−'
+      }
+      details p {
+      font-size:15px;
+      color:var(--muted);
+      margin:15px 0 0
+      }
+      .contact {
+      background:var(--green);
+      padding:65px 0
+      }
+      .contact .wrap {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:35px
+      }
+      .contact h2 {
+      max-width:550px;
+      margin-bottom:12px
+      }
+      .contact p {
+      margin:0;
+      max-width:540px
+      }
+      .contact .btn {
+      white-space:nowrap
+      }
+      footer {
+      background:var(--ink);
+      color:white;
+      padding:35px 0
+      }
+      footer .wrap {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px
+      }
+      footer p {
+      font-size:13px;
+      color:#b3c2b7;
+      margin:0
+      }
+      footer a {
+      text-decoration:none
+      }
+      .hide {
+      display:none
+      }
+      @media(max-width:900px) {
+      .links {
+      gap:16px
+      }
+      .links a:last-child {
+      display:none
+      }
+      .hero-grid {
+      gap:30px
+      }
+      .cards {
+      grid-template-columns:repeat(2,1fr)
+      }
+      .split {
+      gap:35px
+      }
+      .steps {
+      grid-template-columns:repeat(2,1fr)
+      }
+      .support {
+      gap:35px
+      }
+      .hero {
+      padding-top:60px
+      }
+      h1 {
+      letter-spacing:-2px
+      }
+      .sell h2 {
+      font-size:38px
+      }
+      }
+      @media(max-width:650px) {
+      nav {
+      min-height:72px
+      }
+      .brand {
+      font-size:21px
+      }
+      .links {
+      display:none
+      }
+      nav .btn {
+      padding:10px 15px;
+      min-height:42px
+      }
+      .wrap {
+      padding-left:6%;
+      padding-right:6%
+      }
+      .hero-grid,.split,.support,.faq-grid {
+      grid-template-columns:1fr
+      }
+      .hero-grid {
+      gap:35px
+      }
+      .hero {
+      padding:45px 0
+      }
+      .hero h1 {
+      font-size:49px
+      }
+      .feature {
+      padding:27px
+      }
+      .feature h2 {
+      max-width:100%;
+      font-size:30px
+      }
+      .feature-row {
+      padding:13px 0
+      }
+      .strip .wrap {
+      flex-wrap:wrap;
+      gap:10px 22px;
+      font-size:12px
+      }
+      .strip span:last-child {
+      display:none
+      }
+      section {
+      padding:60px 0
+      }
+      .section-top {
+      display:block
+      }
+      .section-top p {
+      margin-top:20px
+      }
+      .cards {
+      gap:12px
+      }
+      .card {
+      padding:20px 16px;
+      min-height:245px
+      }
+      .card h3 {
+      font-size:18px
+      }
+      .card .num {
+      margin-bottom:24px
+      }
+      .steps {
+      gap:25px 20px
+      }
+      .step h3 {
+      font-size:17px
+      }
+      .support-number {
+      padding:25px
+      }
+      .support-number strong {
+      font-size:90px
+      }
+      .contact .wrap,footer .wrap {
+      align-items:start;
+      flex-direction:column
+      }
+      .quote-box {
+      padding:25px
+      }
+      .contact {
+      padding:45px 0
+      }
+      .intro {
+      font-size:16px
+      }
+      }
+      @media(prefers-reduced-motion:reduce) {
+      html {
+      scroll-behavior:auto
+      }
+      .card {
+      transition:none
+      }
+      }
+      /* Läsbarhet och rörelse */
+      :root {
+      --muted:#46564b;
+      --line:#cbd6cb
+      }
+      body {
+      line-height:1.7
+      }
+      .eyebrow {
+      font-size:14px;
+      letter-spacing:1.5px
+      }
+      .hero-note,.footnote,footer p,.small {
+      font-size:14px
+      }
+      .card p,.step p,.quote-box p,.feature-row,.checklist li {
+      font-size:16px
+      }
+      .card .num {
+      font-size:14px
+      }
+      .intro {
+      color:#405247
+      }
+      .feature .small {
+      color:#e0eae3
+      }
+      .sell p,footer p {
+      color:#d5e2d9
+      }
+      .feature-row {
+      gap:16px
+      }
+      .feature-row span:last-child {
+      text-align:right;
+      font-weight:700
+      }
+      .strip .wrap {
+      font-size:15px
+      }
+      .tags span {
+      font-size:14px
+      }
+      .btn {
+      font-size:16px;
+      transition:background .22s,box-shadow .22s,transform .22s
+      }
+      .btn:hover {
+      transform:translateY(-2px);
+      box-shadow:0 8px 20px #10211918
+      }
+      .btn:active {
+      transform:translateY(0)
+      }
+      .card {
+      transition:transform .3s,box-shadow .3s,border-color .3s
+      }
+      .card:hover {
+      transform:translateY(-6px);
+      box-shadow:0 16px 36px #1021190c;
+      border-color:#82b24e
+      }
+      .links a {
+      position:relative
+      }
+      .links a:after {
+      content:'';
+      position:absolute;
+      left:0;
+      bottom:-7px;
+      width:100%;
+      height:2px;
+      background:#4b8628;
+      transform:scaleX(0);
+      transform-origin:left;
+      transition:transform .25s
+      }
+      .links a:hover:after {
+      transform:scaleX(1)
+      }
+      header {
+      transition:box-shadow .3s
+      }
+      header.scrolled {
+      box-shadow:0 5px 24px #10211912
+      }
+      .feature {
+      box-shadow:0 24px 55px #10211916
+      }
+      .reveal {
+      transition:opacity .75s ease,transform .75s cubic-bezier(.2,.65,.3,1)
+      }
+      .motion-ready .reveal.pending {
+      opacity:0;
+      transform:translateY(22px)
+      }
+      details[open] p {
+      animation:answer-in .3s ease
+      }
+      summary:after {
+      transition:transform .2s
+      }
+      #scroll-progress {
+      position:fixed;
+      top:0;
+      left:0;
+      height:3px;
+      background:#4f8c25;
+      width:100%;
+      transform:scaleX(0);
+      transform-origin:left;
+      z-index:30;
+      pointer-events:none
+      }
+      .hero h1 {
+      animation:hero-in .7s ease both
+      }
+      .hero .intro {
+      animation:hero-in .7s .1s ease both
+      }
+      .hero .actions {
+      animation:hero-in .7s .2s ease both
+      }
+      .hero .feature {
+      animation:hero-in .8s .15s ease both
+      }
+      @keyframes hero-in {
+      from {
+      opacity:0;
+      transform:translateY(16px)
+      }
+      to {
+      opacity:1;
+      transform:none
+      }
+      }
+      @keyframes answer-in {
+      from {
+      opacity:0;
+      transform:translateY(-5px)
+      }
+      to {
+      opacity:1;
+      transform:none
+      }
+      }
+      @media(max-width:650px) {
+      .cards {
+      grid-template-columns:1fr
+      }
+      .card {
+      min-height:auto
+      }
+      .card .num {
+      margin-bottom:16px
+      }
+      .steps {
+      grid-template-columns:1fr
+      }
+      .step h3 {
+      margin-top:12px
+      }
+      .strip .wrap {
+      font-size:14px
+      }
+      .hero h1 {
+      font-size:clamp(39px,10vw,49px)
+      }
+      .feature-row {
+      font-size:15px
+      }
+      .feature-footer {
+      gap:20px
+      }
+      .small {
+      max-width:170px
+      }
+      .sell h2 {
+      font-size:36px
+      }
+      }
+      @media(prefers-reduced-motion:reduce) {
+      *,*:before,*:after {
+      animation:none!important;
+      transition:none!important;
+      scroll-behavior:auto!important
+      }
+      .motion-ready .reveal.pending {
+      opacity:1;
+      transform:none
+      }
+      .btn:hover,.card:hover {
+      transform:none
+      }
+      }
+      .feature {
+      background:#fff;
+      color:var(--ink);
+      border:1px solid var(--line)
+      }
+      .feature .eyebrow {
+      color:#397311
+      }
+      .feature-list {
+      border-top-color:var(--line)
+      }
+      .feature-row {
+      border-bottom-color:var(--line)
+      }
+      .feature-row span:last-child {
+      color:#397311
+      }
+      .feature .big {
+      color:#397311
+      }
+      .feature .small {
+      color:#405247
+      }
+      footer {
+      background:#fff;
+      color:var(--ink);
+      border-top:1px solid var(--line)
+      }
+      footer p {
+      color:#405247
+      }
+    </style>
+</head>
+<body>
+  <div id="scroll-progress" aria-hidden="true">
+  </div>
+  <header>
+    <nav class="wrap" aria-label="Huvudnavigation">
+      <a class="brand" href="#">
+        <span class="mark" aria-hidden="true">↻</span>omstart<span style="font-weight:400"> IT</span>
+        </a>
+        <div class="links">
+          <a href="#utrustning">Vår utrustning</a>
+            <a href="#salj">Sälj till oss</a>
+              <a href="#process">Så arbetar vi</a>
+                <a href="#support">Support</a>
+                </div>
+                <a class="btn" href="#kontakt">Prata med oss</a>
+                </nav>
+              </header>
+              <main>
+                <div class="hero">
+                  <div class="wrap hero-grid">
+                    <div>
+                      <span class="eyebrow">Återbruk av IT · Örebro</span>
+                        <h1>Bra teknik.<br>
+                          <span>Ett nytt kapitel.</span>
+                          </h1>
+                          <p class="intro">Vi köper IT-utrustning som blivit över och ger den en ny start. För dig som vill sälja smart — eller köpa en dator som har mer att ge.</p>
+                            <div class="actions">
+                              <a class="btn green" href="#utrustning">Jag vill köpa</a>
+                                <a class="btn light" href="#salj">Jag vill sälja</a>
+                                </div>
+                                <p class="hero-note">Datorer, skärmar och tillbehör. För företag och privatpersoner.</p>
+                                </div>
+                                <aside class="feature" aria-label="Vårt erbjudande">
+                                  <span class="eyebrow">Nästa ägare. Samma potential.</span>
+                                    <h2>Begagnat.<br>Genomgånget.<br>Redo igen.</h2>
+                                      <div class="feature-list">
+                                        <div class="feature-row">
+                                          <span>Funktion & skick</span>
+                                            <span>Kontrolleras</span>
+                                            </div>
+                                            <div class="feature-row">
+                                              <span>Lagrade uppgifter</span>
+                                                <span>Raderas & verifieras</span>
+                                                </div>
+                                                <div class="feature-row">
+                                                  <span>Din nya start</span>
+                                                    <span>Grundsupport ingår*</span>
+                                                    </div>
+                                                  </div>
+                                                  <div class="feature-footer">
+                                                    <span class="big">03</span>
+                                                      <span class="small">månaders grundsupport vid datorköp</span>
+                                                      </div>
+                                                    </aside>
+                                                  </div>
+                                                </div>
+                                                <div class="strip">
+                                                  <div class="wrap">
+                                                    <span>Testad utrustning</span>
+                                                      <span>Dokumenterad dataradering</span>
+                                                        <span>3 månaders grundsupport*</span>
+                                                        </div>
+                                                      </div>
+                                                      <section id="utrustning">
+                                                        <div class="wrap">
+                                                          <div class="section-top">
+                                                            <div>
+                                                              <span class="eyebrow">Köp & sälj</span>
+                                                                <h2>Det mesta för<br>din nästa arbetsplats.</h2>
+                                                                </div>
+                                                                <p>En laptop för studierna, en skärm till hemmakontoret eller ett helt parti från företaget. Vi tar vara på användbar teknik.</p>
+                                                                </div>
+                                                                <div class="cards">
+                                                                  <article class="card">
+                                                                    <span class="num">01 / DATORER</span>
+                                                                      <h3>Bärbara datorer</h3>
+                                                                        <p>Smidiga arbetsdatorer för vardag, jobb och studier. Vi kontrollerar bland annat batteri, tangentbord och anslutningar.</p>
+                                                                        </article>
+                                                                        <article class="card">
+                                                                          <span class="num">02 / DATORER</span>
+                                                                            <h3>Stationära datorer</h3>
+                                                                              <p>Kontorsdatorer och kompakta arbetsstationer. Testade komponenter och tydlig information om prestanda och skick.</p>
+                                                                              </article>
+                                                                              <article class="card">
+                                                                                <span class="num">03 / SKÄRMAR</span>
+                                                                                  <h3>Bildskärmar</h3>
+                                                                                    <p>Mer plats för det du gör. Panel, bild, ingångar och reglage kontrolleras. Synliga märken och upptäckta pixelfel beskrivs.</p>
+                                                                                    </article>
+                                                                                    <article class="card">
+                                                                                      <span class="num">04 / TILLBEHÖR</span>
+                                                                                        <h3>Det runtomkring</h3>
+                                                                                          <p>Dockningsstationer, nätverksutrustning och andra tillbehör. Vi bedömer funktion och möjlighet till återbruk.</p>
+                                                                                          </article>
+                                                                                        </div>
+                                                                                        <p class="footnote">Utbudet varierar. Fråga oss om aktuella modeller, specifikationer och priser.</p>
+                                                                                        </div>
+                                                                                      </section>
+                                                                                      <section class="sell" id="salj">
+                                                                                        <div class="wrap split">
+                                                                                          <div>
+                                                                                            <span class="eyebrow">För utrustning som blivit över</span>
+                                                                                              <h2>Bytt datorer?<br>Vi tar nästa steg.</h2>
+                                                                                                <p>Gör plats på kontoret och ta vara på värdet i utrustning som inte längre används. Vi är intresserade av både enstaka enheter och större partier.</p>
+                                                                                                  <ul class="checklist">
+                                                                                                    <li>Bedömning utifrån modell, ålder, mängd och skick</li>
+                                                                                                      <li>Överenskommet pris innan affären</li>
+                                                                                                        <li>Dataradering och dokumentation enligt avtal</li>
+                                                                                                          <li>Överlämning eller hämtning enligt överenskommelse</li>
+                                                                                                          </ul>
+                                                                                                        </div>
+                                                                                                        <div class="quote-box">
+                                                                                                          <h3>Vad har ni att sälja?</h3>
+                                                                                                            <p>Samla en kort beskrivning inför kontakt. Ange gärna modell, antal, skick och om laddare eller tillbehör finns.</p>
+                                                                                                              <label for="equipment">Er utrustning</label>
+                                                                                                                <textarea id="equipment" placeholder="Exempel: 12 bärbara datorer, modell och ungefärlig ålder, samt 8 skärmar. Finns i Örebro.">
+                                                                                                                </textarea>
+                                                                                                                <button class="btn green" id="copy" type="button">Kopiera min förfrågan</button>
+                                                                                                                  <p id="copy-status" class="status" role="status" aria-live="polite">Kopiera texten och använd den när du kontaktar oss.</p>
+                                                                                                                  </div>
+                                                                                                                </div>
+                                                                                                              </section>
+                                                                                                              <section class="process" id="process">
+                                                                                                                <div class="wrap">
+                                                                                                                  <div class="section-top">
+                                                                                                                    <div>
+                                                                                                                      <span class="eyebrow">Från inlämning till ny ägare</span>
+                                                                                                                        <h2>Trygghet börjar<br>med en tydlig process.</h2>
+                                                                                                                        </div>
+                                                                                                                        <p>Varje steg ska gå att följa. Vi kontrollerar utrustningen och dokumenterar arbetet innan den går vidare.</p>
+                                                                                                                        </div>
+                                                                                                                        <div class="steps">
+                                                                                                                          <article class="step">
+                                                                                                                            <b>01 / INVENTERING</b>
+                                                                                                                              <h3>Vi vet vad vi tar emot</h3>
+                                                                                                                                <p>Modell, serienummer, tillbehör och skick registreras. För lagringsmedia dokumenteras även vilken disk som hör till enheten.</p>
+                                                                                                                                </article>
+                                                                                                                                <article class="step">
+                                                                                                                                  <b>02 / DATARADERING</b>
+                                                                                                                                    <h3>Rätt metod för lagringen</h3>
+                                                                                                                                      <p>Raderingsmetoden anpassas till disktypen. Resultatet kontrolleras och dokumenteras i ett protokoll kopplat till lagringsmediets identitet.</p>
+                                                                                                                                      </article>
+                                                                                                                                      <article class="step">
+                                                                                                                                        <b>03 / TEST & REKONDITIONERING</b>
+                                                                                                                                          <h3>Vi går igenom funktionen</h3>
+                                                                                                                                            <p>Vi testar relevanta komponenter, rengör utrustningen och installerar ett lämpligt operativsystem på datorer som ska säljas.</p>
+                                                                                                                                            </article>
+                                                                                                                                            <article class="step">
+                                                                                                                                              <b>04 / KLAR FÖR ÅTERBRUK</b>
+                                                                                                                                                <h3>Du får veta vad du köper</h3>
+                                                                                                                                                  <p>Specifikationer, skick, upptäckta brister och batteristatus för bärbara datorer beskrivs. Utrustning som inte klarar kontrollerna säljs inte som fullt fungerande.</p>
+                                                                                                                                                  </article>
+                                                                                                                                                </div>
+                                                                                                                                                <div class="process-note">
+                                                                                                                                                  <strong>Om raderingen inte kan verifieras</strong>
+                                                                                                                                                    <br>Lagringsmediet går inte vidare till försäljning. Fortsatt hantering och eventuell destruktion bestäms med kunden. Omfattningen av radering och dokumentation avtalas innan överlämning.</div>
+                                                                                                                                                    </div>
+                                                                                                                                                  </section>
+                                                                                                                                                  <section id="support">
+                                                                                                                                                    <div class="wrap">
+                                                                                                                                                      <div class="support">
+                                                                                                                                                        <div class="support-number">
+                                                                                                                                                          <strong>3</strong>
+                                                                                                                                                            <span>månaders grundsupport*</span>
+                                                                                                                                                            </div>
+                                                                                                                                                            <div>
+                                                                                                                                                              <span class="eyebrow">En enklare start</span>
+                                                                                                                                                                <h2>En ny dator.<br>Någon att fråga.</h2>
+                                                                                                                                                                  <p>Vid datorköp ingår tre månaders kostnadsfri grundsupport för den köpta datorn. Vi hjälper dig att komma igång och reda ut enklare frågor.</p>
+                                                                                                                                                                    <div class="tags">
+                                                                                                                                                                      <span>Kom igång</span>
+                                                                                                                                                                        <span>Operativsystem</span>
+                                                                                                                                                                          <span>Drivrutiner</span>
+                                                                                                                                                                            <span>Enklare felsökning</span>
+                                                                                                                                                                            </div>
+                                                                                                                                                                            <p class="footnote">*Support via överenskommen kontaktkanal. Gäller normal användning av den köpta datorn. Hembesök, dataräddning, reparationer och hjälp med annan utrustning ingår inte. Omfattning och svarstider framgår av köpvillkoren.</p>
+                                                                                                                                                                            </div>
+                                                                                                                                                                          </div>
+                                                                                                                                                                        </div>
+                                                                                                                                                                      </section>
+                                                                                                                                                                      <section class="faq">
+                                                                                                                                                                        <div class="wrap faq-grid">
+                                                                                                                                                                          <div>
+                                                                                                                                                                            <span class="eyebrow">Bra att veta</span>
+                                                                                                                                                                              <h2>Vanliga frågor.</h2>
+                                                                                                                                                                              </div>
+                                                                                                                                                                              <div>
+                                                                                                                                                                                <details>
+                                                                                                                                                                                  <summary>Köper ni även mindre mängder?</summary>
+                                                                                                                                                                                    <p>Ja, vi bedömer både enstaka enheter och större partier. Skicka information om modell, antal och skick så kan vi ta ställning till ett uppköp.</p>
+                                                                                                                                                                                    </details>
+                                                                                                                                                                                    <details>
+                                                                                                                                                                                      <summary>Hur vet jag vilket skick en dator är i?</summary>
+                                                                                                                                                                                        <p>Du får information om specifikationer, genomförda kontroller och upptäckta brister inför köp. På bärbara datorer beskriver vi även den uppmätta batteristatusen.</p>
+                                                                                                                                                                                        </details>
+                                                                                                                                                                                        <details>
+                                                                                                                                                                                          <summary>Kan vi få dokumentation på dataraderingen?</summary>
+                                                                                                                                                                                            <p>Dokumenterad radering kan ingå enligt överenskommelse. Protokollet anger identifiering av lagringsmediet, använd metod, datum och resultat av kontrollen. Bestäm dokumentationskraven med oss innan utrustningen lämnas över.</p>
+                                                                                                                                                                                            </details>
+                                                                                                                                                                                            <details>
+                                                                                                                                                                                              <summary>Ingår support när jag köper en skärm?</summary>
+                                                                                                                                                                                                <p>Erbjudandet om tre månaders grundsupport gäller datorköp. För skärmar och tillbehör beskriver vi funktion, kompatibilitet och vad som medföljer inför köp.</p>
+                                                                                                                                                                                                </details>
+                                                                                                                                                                                              </div>
+                                                                                                                                                                                            </div>
+                                                                                                                                                                                          </section>
+                                                                                                                                                                                          <section class="contact" id="kontakt">
+                                                                                                                                                                                            <div class="wrap">
+                                                                                                                                                                                              <div>
+                                                                                                                                                                                                <span class="eyebrow">Omstart IT · Örebro</span>
+                                                                                                                                                                                                  <h2>Låt oss ge tekniken<br>en omstart.</h2>
+                                                                                                                                                                                                    <p>Vill du sälja utrustning eller hitta din nästa dator? Beskriv vad du har eller vad du söker.</p>
+                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                    <a class="btn" href="#salj">Förbered din förfrågan</a>
+                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                  </section>
+                                                                                                                                                                                                </main>
+                                                                                                                                                                                                <footer>
+                                                                                                                                                                                                  <div class="wrap">
+                                                                                                                                                                                                    <a class="brand" href="#">
+                                                                                                                                                                                                      <span class="mark" aria-hidden="true">↻</span>omstart<span style="font-weight:400"> IT</span>
+                                                                                                                                                                                                      </a>
+                                                                                                                                                                                                      <p>Köp, försäljning och återbruk av IT-utrustning · Örebro</p>
+                                                                                                                                                                                                        <p>© <span id="year">2026</span> Omstart IT</p>
+                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                      </footer>
+                                                                                                                                                                                                      <script>
+                                                                                                                                                                                                      document.getElementById('year').textContent=new Date().getFullYear();
+                                                                                                                                                                                                      document.getElementById('copy').addEventListener('click',async()=>{const field=document.getElementById('equipment'),status=document.getElementById('copy-status');
+                                                                                                                                                                                                      if(!field.value.trim()){status.textContent='Beskriv din utrustning först.';
+                                                                                                                                                                                                      field.focus();
+                                                                                                                                                                                                      return}const text='Hej Omstart IT!\n\nJag vill få en bedömning av följande utrustning:\n'+field.value.trim();
+                                                                                                                                                                                                      try{await navigator.clipboard.writeText(text);
+                                                                                                                                                                                                      status.textContent='Förfrågan är kopierad. Ingen förfrågan har skickats.'}catch(e){field.focus();
+                                                                                                                                                                                                      field.select();
+                                                                                                                                                                                                      status.textContent='Markera och kopiera texten manuellt med Ctrl+C eller ⌘C.'}});
+                                                                                                                                                                                                      (()=>{const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+                                                                                                                                                                                                      const header=document.querySelector('header');
+                                                                                                                                                                                                      const bar=document.getElementById('scroll-progress');
+                                                                                                                                                                                                      let ticking=false;
+                                                                                                                                                                                                      const update=()=>{const max=document.documentElement.scrollHeight-innerHeight;
+                                                                                                                                                                                                      bar.style.transform='scaleX('+(max>0?Math.min(1,Math.max(0,scrollY/max)):0)+')';
+                                                                                                                                                                                                      header.classList.toggle('scrolled',scrollY>20);
+                                                                                                                                                                                                      ticking=false};
+                                                                                                                                                                                                      addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(update);
+                                                                                                                                                                                                      ticking=true}},{passive:true});
+                                                                                                                                                                                                      addEventListener('resize',update);
+                                                                                                                                                                                                      update();
+                                                                                                                                                                                                      if(!reduced.matches&&'IntersectionObserver' in window){const nodes=document.querySelectorAll('.section-top,.card,.split>div,.step,.process-note,.support>div,.faq-grid>div,.contact .wrap');
+                                                                                                                                                                                                      const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.remove('pending');
+                                                                                                                                                                                                      observer.unobserve(entry.target)}})},{threshold:0.08});
+                                                                                                                                                                                                      nodes.forEach((node,i)=>{node.classList.add('reveal');
+                                                                                                                                                                                                      if(node.getBoundingClientRect().top>innerHeight){node.classList.add('pending');
+                                                                                                                                                                                                      node.style.transitionDelay=(i%4)*60+'ms';
+                                                                                                                                                                                                      observer.observe(node)}});
+                                                                                                                                                                                                      document.documentElement.classList.add('motion-ready');
+                                                                                                                                                                                                      reduced.addEventListener('change',e=>{if(e.matches){document.querySelectorAll('.pending').forEach(n=>n.classList.remove('pending'));
+                                                                                                                                                                                                      observer.disconnect()}})}})();
+                                                                                                                                                                                                    </script>
+                                                                                                                                                                                                </body>
+                                                                                                                                                                                              </html>
